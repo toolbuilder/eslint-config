@@ -1,9 +1,8 @@
 {
   "name": "@toolbuilder/eslint-config",
-  "version": "0.1.0-rc0",
+  "version": "0.1.0",
   "description": "Eslint config based on standard.js (https://standardjs.com), minus the plugins",
   "main": "index.js",
-  "module": "config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +10,6 @@
   "license": "MIT",
   "peerDependencies": {
     "eslint": ">=6.2.2"
-  },
-  "dependencies": {
-    "esm": "^3.2.25"
   },
   "repository": {
     "type": "git",
