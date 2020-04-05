@@ -1,18 +1,30 @@
 {
   "name": "@toolbuilder/eslint-config",
-  "version": "0.1.0",
+  "version": "0.1.1-rc0",
   "description": "Eslint config based on standard.js (https://standardjs.com), minus the plugins",
-  "main": "index.js",
+  "files": [
+    "src"
+  ],
+  "main": ".eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape -r esm test/*_test.js"
   },
   "author": "Kevin Hudson",
   "license": "MIT",
-  "peerDependencies": {
-    "eslint": ">=6.2.2"
+  "bin": "./src/configure.js",
+  "devDependencies": {
+    "eslint": ">=6.8.0",
+    "tap-nirvana": "^1.1.0",
+    "tape": "^4.13.2",
+    "zora": "^3.1.8"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/toolbuilder/eslint-config"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "find-up": "^4.1.0",
+    "resolve": "^1.15.1"
   }
 }
