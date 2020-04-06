@@ -17,14 +17,14 @@ const getEslintConfigPackageJson = async () => {
   })
 }
 
-const verifyNotModifyingThisPackage = (targetPkgJson, configPkgJson) => {
+const throwIfModifyingThisPackage = (targetPkgJson, configPkgJson) => {
   if (targetPkgJson.name === configPkgJson.name) {
     throw new Error(`Trying to modify self, ${configPkgJson.name}\n, please run in root of another project`)
   }
 }
 
 const createUpdatedPackageJson = (targetPkgJson, configPkgJson) => {
-  const targetPkgJsonCopy = { ...targetPkgJson }
+  const targetPkgJsonCopy = JSON.parse(JSON.stringify(targetPkgJson)) // deep copy
   updateTargetConfig(targetPkgJsonCopy, configPkgJson)
   return targetPkgJsonCopy
 }
@@ -40,7 +40,7 @@ const main = async () => {
   const configPkgJson = await getEslintConfigPackageJson()
   const targetPkgJson = await getTargetPackageJson(targetPkgJsonPath)
 
-  verifyNotModifyingThisPackage(targetPkgJson, configPkgJson)
+  throwIfModifyingThisPackage(targetPkgJson, configPkgJson)
 
   const updatedTargetPkgJson = createUpdatedPackageJson(targetPkgJson, configPkgJson)
 

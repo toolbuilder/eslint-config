@@ -6,12 +6,13 @@ const testTargets = [
   ['adds undefined devDependencies', {}],
   ['adds missing devDependencies', { devDependencies: {} }],
   ['updates existing devDependencies', { devDependencies: { eslint: '^5.2.0', '@toolbuilder/eslint-config': '0.0.1' } }],
+  ['updates eslint devDependencies', { devDependencies: { eslint: '^5.2.0', '@toolbuilder/eslint-config': '0.1.1' } }],
   ['destroys existing config', { eslintConfig: { extends: 'someotherconfig', ignore: 'filesthatshouldbescanned' } }]
 ]
 
 const configPkg = {
   name: '@toolbuilder/eslint-config',
-  version: '0.0.1',
+  version: '0.1.1',
   devDependencies: {
     eslint: '^6.8.0',
     '@toolbuilder/eslint-config': '>=0.0.1',
@@ -24,7 +25,7 @@ const expectedPkg = {
   version: '2.1.3',
   devDependencies: {
     eslint: '^6.8.0',
-    '@toolbuilder/eslint-config': '>=0.0.1'
+    '@toolbuilder/eslint-config': '>=0.1.1'
   },
   eslintConfig: {
     extends: '@toolbuilder/eslint-config'

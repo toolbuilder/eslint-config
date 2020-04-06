@@ -1,6 +1,6 @@
 {
   "name": "@toolbuilder/eslint-config",
-  "version": "0.1.1",
+  "version": "0.1.2-rc0",
   "description": "Eslint config based on standard.js (https://standardjs.com), minus the plugins",
   "files": [
     "src"
