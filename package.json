@@ -2,9 +2,20 @@
   "name": "@toolbuilder/eslint-config",
   "version": "0.1.3",
   "description": "Eslint config based on standard.js (https://standardjs.com), plus es2020, minus the plugins.",
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "config",
+    "standardjs",
+    "es2020"
+  ],
+  "homepage": "https://github.com/toolbuilder/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/toolbuilder/eslint-config/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/toolbuilder/eslint-config"
+    "url": "https://github.com/toolbuilder/eslint-config.git"
   },
   "license": "MIT",
   "author": "Kevin Hudson",
@@ -14,8 +25,14 @@
     "src"
   ],
   "scripts": {
+    "check": "run-s check:*",
+    "check:packagejson": "npmPkgJsonLint .",
+    "check:packfile": "rollup --config node:@toolbuilder/rollup-config-pkgtest",
+    "check:test": "run-s test",
+    "check:uncommitted": "uncommitted",
+    "prerelease": "run-s check",
     "release": "standard-version",
-    "test": "tape -r esm test/*_test.js"
+    "test": "tape -r esm \"test/*test.js\""
   },
   "dependencies": {
     "esm": "^3.2.25",
@@ -23,10 +40,19 @@
     "resolve": "^1.15.1"
   },
   "devDependencies": {
+    "@toolbuilder/package-json-lint-config": "^0.1.0",
+    "@toolbuilder/rollup-config-pkgtest": "^0.1.0",
     "eslint": ">=6.8.0",
+    "npm-package-json-lint": "^5.1.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.18.0",
     "standard-version": "^8.0.0",
     "tap-nirvana": "^1.1.0",
     "tape": "^4.13.2",
+    "uncommitted": "^1.0.0",
     "zora": "^3.1.8"
+  },
+  "npmpackagejsonlint": {
+    "extends": "@toolbuilder/package-json-lint-config"
   }
 }
