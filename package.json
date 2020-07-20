@@ -1,6 +1,6 @@
 {
   "name": "@toolbuilder/eslint-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Eslint config based on standard.js (https://standardjs.com), plus es2020, minus the plugins.",
   "keywords": [
     "eslint-config",
