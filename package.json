@@ -37,20 +37,20 @@
   "dependencies": {
     "esm": "^3.2.25",
     "find-up": "^4.1.0",
-    "resolve": "^1.15.1"
+    "resolve": "^1.17.0"
   },
   "devDependencies": {
     "@toolbuilder/package-json-lint-config": "^0.1.0",
-    "@toolbuilder/rollup-config-pkgtest": "^0.1.0",
-    "eslint": ">=6.8.0",
+    "@toolbuilder/rollup-config-pkgtest": "^0.1.1",
+    "eslint": ">=7.5.0",
     "npm-package-json-lint": "^5.1.0",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.18.0",
-    "standard-version": "^8.0.0",
+    "rollup": "^2.22.1",
+    "standard-version": "^8.0.2",
     "tap-nirvana": "^1.1.0",
-    "tape": "^4.13.2",
+    "tape": "^5.0.1",
     "uncommitted": "^1.0.0",
-    "zora": "^3.1.8"
+    "zora": "^4.0.0"
   },
   "npmpackagejsonlint": {
     "extends": "@toolbuilder/package-json-lint-config"
